@@ -1,0 +1,56 @@
+{
+  "generated_at": "2025-12-30T00:26:49.646031",
+  "window_mode": "pretip",
+  "locks": [
+    {
+      "rank": 1,
+      "pick": "DeMar DeRozan o3.5 Rebounds",
+      "matchup": "Sacramento Kings @ Los Angeles Clippers",
+      "tip_time": "11:10 PM",
+      "market": "Rebounds",
+      "player": "DeMar DeRozan",
+      "side": "Over",
+      "line": 3.5,
+      "fd_odds": -144,
+      "confidence": 57,
+      "true_prob": 61.64,
+      "badge": "LOW"
+    },
+    {
+      "rank": 2,
+      "pick": "Duncan Robinson o2.5 3PM",
+      "matchup": "Detroit Pistons @ Los Angeles Lakers",
+      "tip_time": "10:40 PM",
+      "market": "3PM",
+      "player": "Duncan Robinson",
+      "side": "Over",
+      "line": 2.5,
+      "fd_odds": -144,
+      "confidence": 55,
+      "true_prob": 59.7,
+      "badge": "LOW"
+    },
+    {
+      "rank": 3,
+      "pick": "Cade Cunningham u2.5 3PM",
+      "matchup": "Detroit Pistons @ Los Angeles Lakers",
+      "tip_time": "10:40 PM",
+      "market": "3PM",
+      "player": "Cade Cunningham",
+      "side": "Under",
+      "line": 2.5,
+      "fd_odds": -172,
+      "confidence": 55,
+      "true_prob": 60.07,
+      "badge": "LOW"
+    }
+  ],
+  "lotto_tickets": [],
+  "parlays": [],
+  "summary": {
+    "locks": 3,
+    "lotto_tickets": 0,
+    "parlays": 0,
+    "total": 3
+  }
+}
