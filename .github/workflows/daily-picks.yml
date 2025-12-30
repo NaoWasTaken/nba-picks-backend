@@ -1,0 +1,35 @@
+name: Generate Daily NBA Picks
+
+on:
+  schedule:
+    # Run at 2:00 PM EST (7:00 PM UTC) every day
+    - cron: '0 19 * * *'
+  workflow_dispatch: # Allows manual triggering for testing
+
+jobs:
+  generate-picks:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install requests python-dotenv supabase pytz
+      
+      - name: Generate and upload picks
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          SPORTSDATAIO_API_KEY: ${{ secrets.SPORTSDATAIO_API_KEY }}
+          BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
+          RAPIDAPI_NBA_KEY: ${{ secrets.RAPIDAPI_NBA_KEY }}
+        run: |
+          python daily_workflow.py
