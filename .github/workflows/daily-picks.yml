@@ -21,7 +21,7 @@ jobs:
       
       - name: Install dependencies
         run: |
-          pip install requests python-dotenv supabase pytz
+          pip install requests python-dotenv supabase pytz resend
       
       - name: Generate and upload picks
         env:
@@ -31,5 +31,14 @@ jobs:
           SPORTSDATAIO_API_KEY: ${{ secrets.SPORTSDATAIO_API_KEY }}
           BALLDONTLIE_API_KEY: ${{ secrets.BALLDONTLIE_API_KEY }}
           RAPIDAPI_NBA_KEY: ${{ secrets.RAPIDAPI_NBA_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
         run: |
           python daily_workflow.py
+          
+      - name: Send emails to subscribers
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+        run: |
+          python send_emails.py
